@@ -1,0 +1,10 @@
+<div class="container">
+  <%= link_to 'Add Cocktails', new_cocktail_path, class: 'btn btn-primary' %>
+  <div class="cards">
+    <% @cocktails.each do |cocktail| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://hips.hearstapps.com/del.h-cdn.co/assets/15/38/1442432590-delish-halloween-cocktails-sweet-poison.png?crop=1xw:0.9996066089693155xh;center,top&resize=980:*')">
+        <%= link_to cocktail.name, cocktail_path(cocktail) %>
+      </div>
+    <% end %>
+  </div>
+</div>
