@@ -1,11 +1,11 @@
-<div class="container">
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1597960194559-d654dce0dc93?ixlib=rb-1.2.1&auto=format);">
-    <div class="container d-flex align-items-end flex-column bd-highlight mb-3">
-      <h1><%= @cocktail.name.titleize %></h1>
-    </div>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cocktail_photo(@cocktail) %>);">
+  <div class="d-flex align-items-end flex-column bd-highlight mb-3">
+    <h1><%= @cocktail.name.titleize %></h1>
   </div>
+</div>
+<div class="container m-4">
   <div class="d-flex justify-content-between">
-    <div class="cocktail-description my-4">
+    <div class="cocktail-description">
       <h2>Description</h2>
       <% @cocktail.doses.each do |dose| %>
         <p><%= dose.description %></p>
@@ -13,10 +13,11 @@
         <%= link_to 'Delete description', dose_path(dose), method: :delete, data: {confirm: 'Confirm deleting this description?'}, class: "btn btn-light" %>
       <% end %>
     </div>
-    <div class="cocktail-ingredient my-4">
+    <div class="cocktail-ingredient">
       <h2>Ingredients</h2>
       <p>something</p>
     </div>
   </div>
-  <%= link_to 'Back', cocktails_path, class: 'btn btn-dark' %>
+  <%= link_to 'Back', cocktails_path, class: 'btn btn-dark mx-4' %>
+</div>
 </div>
