@@ -5,12 +5,24 @@
     <%= link_to 'or add your favourite cocktail', new_cocktail_path, class: 'btn btn-dark' %>
   </div>
 </div>
-<div class="container">
-  <div class="cards">
-    <% @cocktails.each do |cocktail| %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cocktail_photo(cocktail) %>)">
-        <%= link_to cocktail.name, cocktail_path(cocktail) %>
+<div class="cards">
+  <% @cocktails.each do |cocktail| %>
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cocktail_photo(cocktail) %>)">
+            <h2><%= cocktail.name %></h2>
+          </div>
+        </div>
+        <div class="flip-card-back card-category">
+          <p><%= link_to cocktail.name, cocktail_path(cocktail) %></p>
+          <% cocktail.ingredients.each do |ingredient| %>
+            <ul>
+              <li><%= ingredient.name %></li>
+            </ul>
+          <% end %>
+        </div>
       </div>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 </div>

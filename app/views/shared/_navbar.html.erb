@@ -13,7 +13,7 @@
     </ul>
   </div>
   <%= simple_form_for :search, url: cocktails_path, method: "GET", html: { class: 'form-inline' } do |f| %>
-    <%= f.input :name, input_html: {value: ""}, label: "Find your cocktail" %>
+    <%= f.input :name, input_html: {value: ""}, label: "Find by cocktail names: ", required: false%>
     <%= f.submit "Search", class: "btn btn-dark" do %>
       <i class="fas fa-search"></i> Search
     <% end  %>

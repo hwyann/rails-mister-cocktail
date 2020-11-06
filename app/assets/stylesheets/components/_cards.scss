@@ -3,6 +3,7 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
   margin: 24px;
+  background-color: transparent;
 }
 
 .card-category {
@@ -16,6 +17,14 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
+.card-category h2 {
+  color: white;
+  font-size: 32px;
+  font-weight: bold;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+
+}
+
 .card-category a {
   color: white;
   font-size: 24px;
@@ -23,6 +32,51 @@
   text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
 }
 
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 200px;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px;
+}
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: transparent;
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-color: rgba(0,0,0,0.6);
+  color: white;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  transform: rotateY(180deg);
+}
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
