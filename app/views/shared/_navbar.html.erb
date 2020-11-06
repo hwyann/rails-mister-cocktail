@@ -1,0 +1,21 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top">
+  <%= link_to cocktails_path, class: "navbar-brand" do %>
+    <h3><%= image_tag "https://cdn.onlinewebfonts.com/svg/img_483015.png" %>
+      Cocktail Night</h3>
+  <% end %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+      </li>
+    </ul>
+  </div>
+  <%= simple_form_for :search, url: cocktails_path, method: "GET", html: { class: 'form-inline' } do |f| %>
+    <%= f.input :name, input_html: {value: ""}, label: "By cocktail names" %>
+    <%= f.submit "Search", class: "btn btn-dark" do %>
+      <i class="fas fa-search"></i> Search
+    <% end  %>
+  <% end %>
+</div>
