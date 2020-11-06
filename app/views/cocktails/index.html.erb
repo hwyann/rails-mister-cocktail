@@ -8,8 +8,7 @@
 <div class="container">
   <div class="cards">
     <% @cocktails.each do |cocktail| %>
-      <% img = ['https://cf.ltkcdn.net/cocktails/images/orig/259354-2121x1414-whiskey-sour.jpg', 'https://cf.ltkcdn.net/cocktails/images/orig/252120-2121x1414-sazerac.jpg', 'https://cf.ltkcdn.net/cocktails/images/orig/252116-2121x1414-whiskey-sour.jpg'].sample %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= img %>)">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path cocktail.photo.key %>)">
         <%= link_to cocktail.name, cocktail_path(cocktail) %>
       </div>
     <% end %>
