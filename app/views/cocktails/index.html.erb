@@ -1,11 +1,11 @@
-<div class="container">
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://cf.ltkcdn.net/cocktails/images/std/259380-1600x1067-bartender.jpg);">
-    <div class="container d-flex align-items-start flex-column bd-highlight mb-3">
-      <h1>All the mix feelings about <strong>cocktails</strong></h1>
-      <p>Find your cocktail now</p>
-      <%= link_to 'or add your favourite cocktail', new_cocktail_path, class: 'btn btn-dark' %>
-    </div>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://cf.ltkcdn.net/cocktails/images/std/259380-1600x1067-bartender.jpg);">
+  <div class="container d-flex align-items-start flex-column bd-highlight mb-3">
+    <h1>All the mixed feelings about <strong>cocktails</strong></h1>
+    <p>Find your cocktail now</p>
+    <%= link_to 'or add your favourite cocktail', new_cocktail_path, class: 'btn btn-dark' %>
   </div>
+</div>
+<div class="container">
   <div class="cards">
     <% @cocktails.each do |cocktail| %>
       <% img = ['https://cf.ltkcdn.net/cocktails/images/orig/259354-2121x1414-whiskey-sour.jpg', 'https://cf.ltkcdn.net/cocktails/images/orig/252120-2121x1414-sazerac.jpg', 'https://cf.ltkcdn.net/cocktails/images/orig/252116-2121x1414-whiskey-sour.jpg'].sample %>
