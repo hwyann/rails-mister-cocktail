@@ -14,7 +14,7 @@
             <h2><%= cocktail.name %></h2>
           </div>
         </div>
-        <div class="flip-card-back card-category">
+        <div class="flip-card-back">
           <p><%= link_to cocktail.name, cocktail_path(cocktail) %></p>
           <% cocktail.ingredients.each do |ingredient| %>
             <ul>
