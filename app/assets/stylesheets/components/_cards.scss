@@ -77,6 +77,30 @@
   transform: rotateY(180deg);
 }
 
+.flip-card-back ul {
+  display: d-flex;
+  align-items: center;
+}
+
+.back-cocktail-name {
+  margin-top: 24px;
+}
+
+.back-cocktail-name a {
+  color: white;
+  text-decoration: none;
+  &:hover {
+    opacity: .8;
+  }
+}
+
+.back-cocktail-ing {
+  list-style-type: none;
+  font-size: 1.25em;
+  padding: 4px;
+  float: left;
+}
+
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {

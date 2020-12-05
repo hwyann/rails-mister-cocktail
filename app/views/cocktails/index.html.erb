@@ -11,14 +11,14 @@
       <div class="flip-card-inner">
         <div class="flip-card-front">
           <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cocktail_photo(cocktail) %>)">
-            <h2><%= cocktail.name %></h2>
+            <h2><%= cocktail.name.titleize %></h2>
           </div>
         </div>
         <div class="flip-card-back">
-          <p><%= link_to cocktail.name, cocktail_path(cocktail) %></p>
+          <h2 class="back-cocktail-name"><%= link_to cocktail.name.titleize, cocktail_path(cocktail) %></h2>
           <% cocktail.ingredients.each do |ingredient| %>
             <ul>
-              <li><%= ingredient.name %></li>
+              <li class="back-cocktail-ing"><%= ingredient.name.titleize %></li>
             </ul>
           <% end %>
         </div>
