@@ -3,7 +3,7 @@
     <h1><%= @cocktail.name.titleize %></h1>
   </div>
 </div>
-<div class="container m-4">
+<div class="cocktail-show-container m-4">
   <div class="d-flex justify-content-between">
     <div class="cocktail-description">
       <h2>Description</h2>
@@ -13,11 +13,11 @@
             <i class="far fa-trash-alt"></i>
           <% end %></p>
       <% end %>
-      <%= link_to new_cocktail_dose_path(@cocktail), class: "btn btn-light" do %>
-        <p>
+      <%= link_to new_cocktail_dose_path(@cocktail), class: "btn btn-primary d-flex align-items-center" do %>
+        <div>
           <i class="fas fa-feather"></i>
-          new description
-        </p>
+          Add Descriptions
+        </div>
       <% end %>
     </div>
     <div class="cocktail-ingredient">
@@ -27,9 +27,9 @@
           <li><%= dose.ingredient.name %></li>
         <% end %>
       </ul>
-      <div>
-        <%= link_to 'Back', cocktails_path, class: 'btn btn-dark mx-4' %>
-      </div>
     </div>
+  </div>
+  <div class="back-btn">
+    <%= link_to 'Back', cocktails_path, class: 'btn btn-dark mx-4' %>
   </div>
 </div>
