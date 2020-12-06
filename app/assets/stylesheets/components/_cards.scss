@@ -69,36 +69,37 @@
 
 /* Style the back side */
 .flip-card-back {
-  background-color: rgba(0,0,0,0.6);
+  background: rgb(64,42,42);
+  background: linear-gradient(146deg, rgba(64,42,42,0.9206057422969187) 68%, rgba(252,215,34,0.5228466386554622) 73%, rgba(64,42,42,1) 80%);
   color: white;
   align-items: center;
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   transform: rotateY(180deg);
-}
-
-.flip-card-back ul {
   display: d-flex;
+  list-style: none;
   align-items: center;
 }
 
 .back-cocktail-name {
   margin-top: 24px;
+  opacity: .8;
 }
 
 .back-cocktail-name a {
   color: white;
   text-decoration: none;
   &:hover {
-    opacity: .8;
+    opacity: 1;
   }
 }
 
 .back-cocktail-ing {
-  list-style-type: none;
+  margin-top: 24px;
+  display: d-flex;
+  flex-direction: column;
+  align-items: flex-start;
   font-size: 1.25em;
-  padding: 4px;
-  float: left;
 }
 
 // Smallest device

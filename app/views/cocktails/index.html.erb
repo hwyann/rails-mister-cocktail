@@ -14,15 +14,23 @@
             <h2><%= cocktail.name.titleize %></h2>
           </div>
         </div>
-        <div class="flip-card-back">
-          <h2 class="back-cocktail-name"><%= link_to cocktail.name.titleize, cocktail_path(cocktail) %></h2>
-          <% cocktail.ingredients.each do |ingredient| %>
-            <ul>
-              <li class="back-cocktail-ing"><%= ingredient.name.titleize %></li>
-            </ul>
+        <%= link_to cocktail_path(cocktail) do %>
+          <div class="flip-card-back">
+            <% if cocktail.ingredients.any? %>
+              <div class="back-cocktail-ing">
+                <h2>Ingredients:</h2>
+                <% cocktail.ingredients.each do |ingredient| %>
+                  <div><%= ingredient.name.titleize %></div>
+                <% end %>
+              </div>
+            <% else %>
+              <div class="back-cocktail-ing">No ingredients yet...<br>
+              </div>
+              click to add ingredients</div>
           <% end %>
         </div>
-      </div>
+      <% end %>
     </div>
-  <% end %>
+  </div>
+<% end %>
 </div>
