@@ -5,29 +5,41 @@
 </div>
 <div class="cocktail-show-container m-4">
   <div class="d-flex justify-content-between">
-    <div class="cocktail-description">
-      <h2>Description</h2>
-      <% @cocktail.doses.each do |dose| %>
-        <p><%= dose.description %>
-          <%= link_to dose_path(dose), method: :delete, data: {confirm: 'Confirm deleting this description?'}, class: "btn btn-light" do %>
-            <i class="far fa-trash-alt"></i>
-          <% end %></p>
-      <% end %>
-      <%= link_to new_cocktail_dose_path(@cocktail), class: "btn btn-primary d-flex align-items-center" do %>
-        <div>
-          <i class="fas fa-feather"></i>
-          Add Descriptions
-        </div>
-      <% end %>
-    </div>
-    <div class="cocktail-ingredient">
-      <h2>Ingredients</h2>
-      <ul>
+    <% if @cocktail.doses.any? %>
+      <div class="cocktail-description">
+        <h2>Description</h2>
         <% @cocktail.doses.each do |dose| %>
-          <li><%= dose.ingredient.name %></li>
+          <p><%= dose.description %>
+            <%= link_to dose_path(dose), method: :delete, data: {confirm: 'Confirm deleting this description?'}, class: "btn btn-light" do %>
+              <i class="far fa-trash-alt"></i>
+            <% end %></p>
         <% end %>
-      </ul>
-    </div>
+        <%= link_to new_cocktail_dose_path(@cocktail), class: "btn btn-primary d-flex align-items-center" do %>
+          <div>
+            <i class="fas fa-feather"></i>
+            Add Descriptions
+          </div>
+        <% end %>
+      </div>
+      <div class="cocktail-ingredient">
+        <h2>Ingredients</h2>
+        <ul>
+          <% @cocktail.doses.each do |dose| %>
+            <li><%= dose.ingredient.name %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% else %>
+      <div class="cocktail-description">
+        <p>No descriptions yet.</p>
+        <%= link_to new_cocktail_dose_path(@cocktail), class: "btn btn-primary d-flex align-items-center" do %>
+          <div>
+            <i class="fas fa-feather"></i>
+            Add Descriptions
+          </div>
+        <% end %>
+      </div>
+    <% end %>
   </div>
   <div class="back-btn">
     <%= link_to 'Back', cocktails_path, class: 'btn btn-dark mx-4' %>
